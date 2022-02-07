@@ -52,14 +52,15 @@ const WishLists = () => {
       {show &&
         state.wishLists.map((product, index) => {
           return (
-            <div key={index} className="products">
+            <div key={index} className="favoruite">
+      <button onClick={()=>{deleteWishlist(product.id)}}>X</button>
+
               <img
                     onClick={() => navigate(`/products/${product.id}`)}
                     src={product.image}
                     alt=""
                   />
-              <p>price:{product.price}</p>
-              <button onClick={()=>{deleteWishlist(product.id)}}>X</button>
+              <p>name : {product.name}</p>
             </div>
           );
         })}
